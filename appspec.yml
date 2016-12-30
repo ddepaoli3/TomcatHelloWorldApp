@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /tmp
+hooks:
+  ApplicationStop:
+    # Avoid to stop apache
+    # - location: codedeploy_scripts/stop_server
+    #   timeout: 300
+    #   runas: root
+  #   - location: codedeploy_scripts/remove_old_files
+  #     timeout: 300
+  #     runas: root
+  # AfterInstall:
+  #   - location: codedeploy_scripts/copy_wp_config
+  #     timeout: 300
+  #     runas: root
+  ApplicationStart:
+    - location: codedeploy_scripts/manual_war_installation
+      timeout: 30
+      runas: root
