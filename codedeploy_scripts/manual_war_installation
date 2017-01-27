@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cp /tmp/target/TomcatHelloWorldApp.war /opt/tomcat/webapps/
+systemctl restart tomcat
